@@ -28,19 +28,36 @@ This project uses **FastAPI** for the backend and **Streamlit** for the frontend
 git clone https://github.com/ravikumar266/insureML.git
 cd insureML
 
-
+#  Windows
 python -m venv venv
-venv\Scripts\activate  # For Windows
+venv\Scripts\activate
+
+#  macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+
 pip install -r requirements.txt
 
+### for fast api
 cd app
+pip install scikit-learn    # If required
+pip install scikit-learn==1.6.1   # If required
 uvicorn app:app --reload
 
-## open new terminal but not delete the previous terminal
+### streamlit   open new terminal and not close old terminal
 
+cd insureML  # skip if already there
+
+#  Windows
+venv\Scripts\activate
+
+#  macOS/Linux
+source venv/bin/activate
+
+# Move to frontend and run
 cd streamlit_app
-pip install scikit-learn==1.6.1
-
+pip install scikit-learn==1.6.1   # Optional if already installed
 streamlit run frontend.py
+
 
 
