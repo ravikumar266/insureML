@@ -60,4 +60,37 @@ pip install scikit-learn==1.6.1   # Optional if already installed
 streamlit run frontend.py
 
 
+### 🐳 Docker Deployment 
 
+### 🛠️ Build Docker Image Locally
+
+
+ docker build -t insure-ml-app .
+▶️ Run the Docker Container
+docker run -p 8000:8000 -p 8501:8501 insure-ml-app
+
+
+- FastAPI (Backend): http://localhost:8000  
+- Streamlit (Frontend): http://localhost:8501
+
+### 📥 Pull from Docker Hub
+
+
+docker pull ravikum/insure-ml-app:v1
+docker run -p 8000:8000 -p 8501:8501 ravikum/insure-ml-app:v1
+
+
+
+📤 Push to Docker Hub
+docker tag crop-prediction-app ravikum/insure-ml-app:v1
+docker push ravikum/insure-ml-app:v1
+
+##**Docker Hub Repo:** 
+https://hub.docker.com/repositories/ravikum
+
+
+### ⚙️ Notes
+
+- Make sure Docker is installed and running.
+-
+- Access FastAPI and Streamlit on ports **8000** and **8501** respectively.
